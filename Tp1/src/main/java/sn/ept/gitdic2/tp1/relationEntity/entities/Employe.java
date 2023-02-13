@@ -53,6 +53,10 @@ public class Employe extends Person implements Serializable {
     private Collection<Commande> commandeCollection;
 
     public Employe() {
+    }
+    
+
+    public Employe(Integer id) {
         this.id = id;
     }
 
@@ -122,7 +126,7 @@ public class Employe extends Person implements Serializable {
         if (!(object instanceof Person)) {
             return false;
         }
-        Person other = (Person) object;
+        Employe other = (Employe) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }

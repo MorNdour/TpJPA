@@ -4,6 +4,7 @@
  */
 package sn.ept.gitdic2.tp1.relationEntity.entities;
 
+import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Id;
@@ -15,7 +16,7 @@ import javax.persistence.MappedSuperclass;
  */
     
 @MappedSuperclass
-public abstract class Person {
+public abstract class Person implements Serializable{
 
   
     @Basic(optional = false)
@@ -29,7 +30,11 @@ public abstract class Person {
     private String email;
     @Column(name = "TELEPHONE")
     private String telephone;
-    Object id;
+
+    public Person() {
+    }
+    
+    
     
     
     public Person( String prenom, String nom, String email) {
